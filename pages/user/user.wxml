@@ -1,0 +1,23 @@
+<!-- user.wxml -->
+<view class="container">
+  <view class="userinfo">
+    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
+      <open-data class="userinfo-avatar" background-size="cover" type="userAvatarUrl"></open-data>
+   
+    <open-data class="userinfo-nickname" type="userNickName" open-gid="xxxxxx"></open-data>
+    <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+  </view>
+
+  <view class="person-list" style='margin-top:12px;border-top:1px #ccc solid;'>
+    <view class="list-item" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-prompt="{{item.prompt}}" data-index="{{ index }}" bindtap="navigateTo">
+      <image class="item-image" src="{{item.icon}}"></image>
+      <text class="item-text">{{item.text}}</text>
+      <view class="myorderlook-text">
+        <text>{{item.prompt}}</text>
+      </view>
+      <image class="next-image" src="../../img/next.png"></image>
+    </view>
+  </view>
+
+  <view class="logout" bindtap="logout">登出账号</view>
+</view>

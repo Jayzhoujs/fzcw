@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="swiper-container">
+        <swiper class="swiper-box" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange="swiperchange">
+            <block wx:for="{{ goods.item.images }}" wx:key="">
+                <swiper-item style="position:relative;">
+                    <image src="{{ item.path }}" class="slide-image" data-index="{{ index }}" bindtap="previewImage" />
+                    <view style='width:53.33%;position:absolute;top:36%;left:23.33%;font-size:80rpx;font-weight:bold;'>{{goods.item.name}}</view>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="swiper-pager">{{ current + 1 }} / {{ total }}</view>
+  </view>
+
+  <view class="shopping-container">
+        <view class="name">{{ goods.item.name }}</view>
+        <view class="price">¥ {{ goods.item.price }}</view>
+        <text class="remark">{{ goods.item.remark }}</text><text style="color:red;font-size:12px;">联系电话：400-880-6621</text>
+  </view>
+  <view class="communication" wx:for="{{communication}}" wx:key="" style='padding:0 30rpx;display:flex;flex-direction:column;justify-content:space-around;font-size:10px;color:#666;margin-top:20rpx;'>
+      <text>{{item.title}}</text>
+      <text>{{item.tel1}}</text>
+      <text>{{item.tel2}}</text>
+      <text>{{item.address}}</text>
+  </view>
+
+  <view class='remark' style='padding:0 30rpx;font-size:10px;color:#F95C00;padding-bottom:50px;'>
+    <text>注：本公司服务区域仅限在成都市，金堂县、崇州、彭州、都江堰、邛崃、浦江、新津县不做，如做价格另算。</text>
+  </view>
+
+  
+  <view class="footer-btn">
+    <view class='icon-container'>
+      <view class='icon-items' bindtap="toIndex">
+        <image src='../../../img/index.png'></image>
+        <text>首页</text>
+      </view>
+      <view class='icon-items' bindtap="toCarts">
+        <image src='../../../img/shop.png'></image>
+        <text>购物车</text>
+      </view>
+    </view>
+
+    <!--按钮  -->
+    <view class='btn-container'>
+      <view style='background:#FF9600;' bindtap="addCart">加入购物车</view>
+      <view style='background:#FF0000;' bindtap="addCart">立即购买</view>
+    </view>
+  </view>
+</view>

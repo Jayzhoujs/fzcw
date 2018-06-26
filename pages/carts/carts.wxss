@@ -1,0 +1,156 @@
+/* pages/carts/carts.wxss */
+.cart-box {
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #ccc;
+}
+
+/*-------  msg  --------*/
+.cart-msg{
+  width:30%;
+  display:flex;
+  flex-direction:column;
+  margin:50px auto;
+}
+
+.cart-msg image {
+  width:80px;
+  height:80px;
+  margin:0 auto;
+}
+.cart-msg text {
+  font-size:12px;
+  line-height:41px;
+  color:#ccc;
+  text-align:center;
+}
+
+.cart-msg button {
+  width:90px;
+  height:20px;
+  font-size:12px;
+  line-height:20px;
+  background:#F95C00;
+  color:#fff;
+  border-radius:3px;
+  margin:0 auto;
+  padding:0;
+}
+
+.cart-item {
+  position: relative;
+  width:100%;
+  height:70px;
+  border-bottom:1px solid #666;
+  display:flex;
+  flex-direction: row;
+}
+
+.icon-container {
+  align-self:center;
+  margin: 0 6%;
+}
+
+.cart-item .img-info {
+  height: 50px;
+  align-self:center;
+  position: relative;
+  margin-left: 8%;
+}
+
+.cart-item .img-info image{
+  width: 50px;
+  height: 100%;
+}
+
+.cart-item .img-info text{
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 82%;
+  font-size: 7px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item-info {
+  width:46%;
+  line-height: 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  padding:0 6%;
+  font-size:12px;
+  box-sizing: border-box;
+}
+
+.item-amount{
+  align-self:flex-end;
+  background:#ccc;
+  font-size:12px;
+  display:flex;
+  flex-direction:row;
+  margin-bottom: 9px;
+  margin-right: 10px;
+}
+
+.item-amount text{
+  text-align:center;
+  display:block;
+  width:15px;
+  border:1px solid #fff;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 8px;
+  top: 0px;
+  color:#666;
+}
+
+.contrl-container {
+  width:100%;
+  height:50px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top:1px solid #ccc;
+}
+
+.controller{
+  display:flex;
+  flex-direction:row; 
+  width:100%;
+  height:50px;
+  justify-content:space-between;
+}
+
+.contrlLeft {
+  display:flex;
+  flex-direction:column;
+  margin:0 6%;
+  justify-content:center;
+}
+
+.contrlRight {
+  width: 50%;
+  display:flex;
+  flex-direction:raw;
+  justify-content:space-around;
+  font-size:14px;
+  text-align: center;
+  line-height: 50px;
+}
+.contrlRight view{
+  width:50%;
+  height:100%;
+  color: #fff;
+  font-size: 14px;
+}
+.pay{
+  background: #FF0000;
+} 
+.pay text{
+  font-size:12px;
+}

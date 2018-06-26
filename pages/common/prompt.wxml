@@ -1,0 +1,12 @@
+<template name="prompt">
+	<view class="prompt-container" hidden="{{ prompt.hidden }}">
+	    <view class="prompt-msg">
+	        <image src="{{ prompt.icon || '../../img/order.png' }}" class="prompt-icon" />
+          <text>{{ prompt.title || '没有相关数据' }}</text>
+	        <navigator url="/pages/index/index" open-type="switchTab">
+            <button>去首页逛逛</button>
+          </navigator>
+	        	<button type="{{ item.type || 'default' }}" size="{{ item.size || 'default' }}" loading="{{ item.loading }}" plain="{{ item.plain }}" disabled="{{ item.disabled }}" class="prompt-button {{ item.className }}" hover-class="{{ item.haveClass || 'button-hover' }}" wx:for="{{ prompt.buttons }}" wx:key="" bindtap="{{ item.bindtap }}" data-index="{{ index }}">{{ item.text }}</button>
+	    </view>
+	</view>
+</template>

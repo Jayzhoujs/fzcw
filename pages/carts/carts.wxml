@@ -1,0 +1,67 @@
+<view wx:if="{{ !prompt.hidden }}" class="cart-box">
+  <view class="cart-msg">
+    <image src="{{prompt.icon}}"></image>
+    <text>{{ prompt.title || '购物车没有商品哦' }}</text>
+    <navigator url="../index/index" open-type="switchTab">
+      <button>去首页逛逛</button>
+    </navigator>
+  </view>
+</view>
+
+
+<view wx:if="{{!!carts.items.length }}">
+  <view class="cart-box">
+    <!-- wx:for 渲染购物车列表 -->
+    <view wx:for="{{carts.items}}" wx:key="" class="cart-item">
+        <!-- wx:if 是否选择显示不同图标 -->
+        <!-- <view class='icon-container' bindtap="selectList" data-value="{{item.checked}}" data-id='{{item._id}}'>
+          <icon wx:if="{{item.checked}}" type="success" color="#F95C00" />
+          <icon wx:else type="circle" color="#F95C00"/>
+        </view> -->
+        
+        <!-- 点击商品图片可跳转到商品详情 -->
+        <view class='img-info' bindtap="navigateTo" data-id="{{ item.goods._id }}"> 
+          <image class="cart-thumb" src="../../img/goods.png"></image>
+          <text>{{item.goods.name}}</text>
+        </view> 
+        
+        <view class="item-info">
+          <text>{{item.goods.name}}</text>
+          <text>￥{{item.goods.price}}</text>
+        </view>
+        
+        <!-- 增加减少数量按钮 -->
+        <view class="item-amount">
+          <text bindtap="minusCount" bindtap="decrease" data-id="{{ item._id }}" data-total="{{ item.total }}">-</text>
+          <text style="width:25px;">{{item.total}}</text>
+          <text bindtap="addCount"  bindtap="increase" data-id="{{ item._id }}" data-total="{{ item.total }}">+</text>
+        </view>
+        
+        <!-- 删除按钮 -->
+        <text class="delete-btn" bindtap="del" data-id="{{ item._id }}">×</text>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="contrl-container">
+    <view class="controller">
+      <view class="contrlLeft">
+        <view>总计：
+          <text style='color:#F95C00;'>￥{{totalAmount}}</text>
+        </view>
+        <text style='font-size:10px;color:#ccc;'>总额￥{{totalAmount}}，优惠0.00</text>
+      </view>
+    
+      <!-- 总价 -->
+      <view class="contrlRight">
+          <view style='background:#FF9600;' bindtap="clear">清空购物车</view>
+          <view class='pay' bindtap="confirmOrder">结算
+            <text>({{totalAll}}件)</text>
+          </view>
+      </view>
+    </view>
+    <!-- <view class='pay' bindtap="confirmOrder">结算
+      <text style='font-size:12px;'>({{totalAll}}件)</text>
+    </view> -->
+  </view>
+</view>

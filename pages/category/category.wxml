@@ -1,0 +1,43 @@
+<!--主盒子-->  
+<view class="container">
+  <!--左侧栏-->  
+  <view class="nav_left" bindscrolltolower="getMore" bindscrolltoupper="onRefresh">  
+    <scroll-view scroll-y="true" style="height: {{ deviceHeight + 'px' }}">
+      <view
+        wx:for="{{ classify.items }}
+        wx:key=""
+        class="nav_left_items {{activeIndex === index ? 'active' : ''}}" 
+        bindtap="changeTab" 
+        data-index="{{ index }}" 
+        data-id="{{ item._id }}"
+      >
+          {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 右侧栏   -->
+   <view class="nav_right">
+    <scroll-view scroll-y="true" style="height: {{ (deviceHeight - 20) + 'px' }}" bindscrolltolower="getMoreGoods" bindscrolltoupper="onRefreshGoods">
+    <view wx:if="{{ !!goods.paginate.total }}">
+      <view class="nav_right_items" wx:for="{{goods.items}}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
+        <view class="list-item">
+          <view class="item-container">
+            <image src="../../img/goods.png"></image>
+            <text class="item-name">{{item.name}}</text>
+            <view style="font-size:12px;line-height:22px;width:84%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;">
+              {{item.name}}
+            </view>
+          </view>
+          <view class="item-total">
+            <view>￥{{item.price}}元</view>
+            <button class="buy" bind="">购买</button>
+          </view>
+        </view>
+      </view>  
+      </view>
+    </scroll-view>
+    <!--如果无数据，则显示数据-->  
+    <!-- <view wx:else>暂无数据</view> -->
+  </view> 
+    
+</view>

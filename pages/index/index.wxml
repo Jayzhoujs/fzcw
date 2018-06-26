@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<swiper class="banner" indicator-dots="{{indicatorDots}}" circular="{{circular}}"
+autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="banner">
+    <swiper-item class="slide-item">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="flex-wrp service">
+  <block wx:for="{{navList}}" wx:key="list">
+    <view class="flex-item" data-type="{{ item._id }}" data-index="{{ index }}" catchtap="">
+      <image src="../../img/service{{index+1}}.png"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+
+  <view class="shop-list">
+  <block wx:for="{{navList}}" wx:key="list" wx:for-item="nav">
+    <view name="{{index}}" class="list-title" data-type="{{ nav._id }}" data-index="{{ index }}">
+      <text>{{nav.name}}</text>
+    </view>
+    <view class="shop-item" wx:if="{{ !!goods.paginate.total }}">
+      <block wx:for="{{nav.goods}}" wx:key="">
+        <view class="list-item" bindtap="navigateTo" data-id="{{ item._id }}">
+          <view class="item-container">
+            <image src="../../img/goods.png"></image>
+            <text class="item-name">{{item.name}}</text>
+            <text style="font-size:12px;line-height:22px;">{{item.name}}</text>
+          </view>
+          <view class="item-total">
+            <view>￥{{item.price}}元</view>
+            <navigator url=""><button class="buy" >购买</button></navigator>
+          </view>
+        </view>
+      </block>
+    </view> 
+  </block> 
+</view> 

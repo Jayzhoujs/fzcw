@@ -1,0 +1,116 @@
+/* pages/order/order.wxss */
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 1px solid #999;  
+    text-align: center;  
+    line-height: 80rpx;
+}  
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    display: inline-block;  
+    width: 33.33%;  
+    color: #333;
+    font-weight: normal;
+}  
+.on{ 
+  color: #F95C00;  
+  border-bottom: 5rpx solid #F95C00;
+}
+.swiper-box{ 
+  display: block;
+  width: 100%; 
+  overflow: hidden;
+}
+.orderList{
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+.item-head{
+  height: 60rpx;
+  font-size: 20rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 44rpx;
+}
+.item-head image {
+  width: 18rpx;
+  height: 20rpx;
+  margin: auto 0;
+}
+.item-container{
+  height: 140rpx;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 44rpx;
+  position:relative;
+  font-size:20rpx;
+  color:#666;
+}
+.pic-name{
+  width:56rpx;
+  height:40rpx;
+  position:absolute;
+  font-size:18rpx;
+  top:48rpx;
+  left:68rpx;
+}
+.item-container image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto 0;
+}
+.item-info{
+  height:140rpx;
+  box-sizing:border-box;
+  padding:20rpx 0;
+  margin-left:-320rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.item-num{
+  font-size:20rpx;
+  position:relative;
+  top:94rpx;
+  height:20rpx;
+}
+
+.order-info{
+  width:25.6%;
+  display:flex;
+  flex-direction:column;
+  margin:50px auto;
+}
+.order-info image {
+  width:80px;
+  height:80px;
+  margin:0 auto;
+}
+.order-info text {
+  font-size:12px;
+  line-height:41px;
+  color:#ccc;
+  text-align:center;
+}
+.order-info button {
+  width:90px;
+  height:20px;
+  font-size:12px;
+  line-height:20px;
+  background:#F95C00;
+  color:#fff;
+  border-radius:3px;
+  margin:0 auto;
+  padding:0;
+}
+
