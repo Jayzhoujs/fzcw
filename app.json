@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/index/index",
+    "pages/carts/carts",
+    "pages/category/category",
+    "pages/goods/detail/detail",
+    "pages/user/user",
+    "pages/order/order",
+    "pages/address/confirm/index",
+    "pages/address/list/index",
+    "pages/address/add/index",
+    "pages/address/edit/index",
+    "pages/order/list/index",
+    "pages/order/confirm/index",
+    "pages/order/detail/detail",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "辅周财务",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#333",
+    "backgroundColorBottom": "#ccc"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#666",
+    "selectedColor": "#f95c00",
+    "backgroundColor": "#fff",
+    "borderStyle": "#ccc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/indexSelect.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "img/category.png",
+        "selectedIconPath": "img/categorySelect.png"
+      },
+      {
+        "pagePath": "pages/carts/carts",
+        "text": "购物车",
+        "iconPath": "img/shop.png",
+        "selectedIconPath": "img/shopSelect.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "img/user.png",
+        "selectedIconPath": "img/userSelect.png"
+      }
+    ]
+  }
+}
